@@ -3,6 +3,7 @@ package com.bestcollab.collaboard.model;
 import java.util.HashSet;
 import java.util.UUID;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,11 +18,16 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BasicBoard {
+	@Setter(AccessLevel.NONE)
 	private UUID id = UUID.randomUUID();
+	
 	private String boardName;
 	private HashSet<Column> columns = new HashSet<Column>();
 	
+	@Setter(AccessLevel.NONE)
 	private transient HashSet<Label> enabledLabels = new HashSet<Label>();
+	
+	@Setter(AccessLevel.NONE)
 	private transient HashSet<Card> associatedCards = new HashSet<Card>();
 	
 	public BasicBoard(String boardName) {
