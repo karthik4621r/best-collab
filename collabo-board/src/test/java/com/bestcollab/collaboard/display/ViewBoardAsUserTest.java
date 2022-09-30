@@ -18,7 +18,7 @@ import com.bestcollab.collaboard.model.User;
  * @author karth
  *
  */
-public class ViewBoardTest {
+public class ViewBoardAsUserTest {
 	BasicBoard board;
 	User user;
 	Column column;
@@ -54,7 +54,7 @@ public class ViewBoardTest {
 	public void testUsersViewedListAfterView() {
 		
 		//Given
-		ViewBoard.view(board, user);
+		ViewBoardAsUser.view(board, user);
 		Card card3 = new Card("card3",null,board,column);
 		
 		//When
@@ -70,11 +70,11 @@ public class ViewBoardTest {
 	public void testUsersViewedListAfter2Views() {
 		
 		//Given
-		ViewBoard.view(board, user);
+		ViewBoardAsUser.view(board, user);
 		Card card3 = new Card("card3",null,board,column);
 		
 		//When
-		ViewBoard.view(board, user);
+		ViewBoardAsUser.view(board, user);
 		HashSet<Card> cardsSeen = user.getCardsSeen(board);
 				
 		//Then

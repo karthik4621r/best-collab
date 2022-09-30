@@ -6,7 +6,7 @@ import com.bestcollab.collaboard.model.BasicBoard;
 import com.bestcollab.collaboard.model.Card;
 import com.bestcollab.collaboard.model.User;
 
-public class ViewBoard {
+public class ViewBoardAsUser {
 
 	/**
 	 * Simulate a user viewing all the cards in the board
