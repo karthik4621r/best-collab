@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.Setter;
 
 
 /**
@@ -17,8 +19,12 @@ import lombok.Getter;
 public class User {
 	
 	//Holds the set of cards already seen by a user in a board
+	@Setter(AccessLevel.NONE)
 	private HashMap<BasicBoard, HashSet<Card>> boardVsCardsSeen = new HashMap<>();
+	
+	@Setter(AccessLevel.NONE)
 	private UUID id = UUID.randomUUID();
+	
 	private String name;
 	
 	public User(String name) {
@@ -35,9 +41,9 @@ public class User {
 		HashSet<Card> cardsSeen = boardVsCardsSeen.get(board);
 		if(cardsSeen == null) {
 			cardsSeen = new HashSet<Card>();
-			cardsSeen.add(card);
 			boardVsCardsSeen.put(board, cardsSeen);
 		}
+		cardsSeen.add(card);
 	}
 	
 	/**

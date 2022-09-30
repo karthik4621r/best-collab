@@ -2,6 +2,7 @@ package com.bestcollab.collaboard.model;
 
 import java.util.UUID;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Label {
+	@Setter(AccessLevel.NONE)
 	private UUID id = UUID.randomUUID();
 	private String name;
 	private String description;
